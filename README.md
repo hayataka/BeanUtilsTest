@@ -7,3 +7,7 @@ http://commons.apache.org/proper/commons-beanutils/javadocs/v1.9.2/apidocs/org/a
 class loader vulnerability   Fixed 1.9.2
 https://issues.apache.org/jira/browse/BEANUTILS-463
 
+
+
+
+https://technology.amis.nl/2007/02/04/using-the-spring-databinder-to-map-strings-to-objects/
