@@ -71,7 +71,10 @@ public class SpringDataBinderTest {
 		mw.add("stringBean[0].date","hogehoge");
 		mw.add("stringBean[1].date","haaaaaaaaaaaaaogehoge");	
 
-bw.setAutoGrowNestedPaths(true);
+		mw.add("stringBean.date", "aaab");
+		mw.add("stringBean.ls[0]", "1");
+		mw.add("stringBean.ls[1]", "2");
+		bw.setAutoGrowNestedPaths(true);
 bw.setAutoGrowCollectionLimit(100);
 		bw.setPropertyValues(mw);
 
