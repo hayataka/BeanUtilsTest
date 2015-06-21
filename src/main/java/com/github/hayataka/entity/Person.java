@@ -26,6 +26,10 @@ public class Person {
 		this.birthDay = birthDay;
 	}
 
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", birthDay=" + birthDay + "]";
+	}
 
 
 }
