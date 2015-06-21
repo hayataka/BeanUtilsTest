@@ -10,30 +10,40 @@
 		<version>1.0.0</version>
 	</parent>
 
+	<properties>
+		<version.commons.benutils>1.9.2</version.commons.benutils>
+		<version.org.springframework>4.1.6.RELEASE</version.org.springframework>
+	</properties>
+
 
 	<dependencies>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
-			<version>1.9.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>4.1.6.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>4.1.6.RELEASE</version>
+			<version>${version.commons.benutils}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.1.6.RELEASE</version>
+			<version>${version.org.springframework}</version>
+			<exclusions>
+				<!-- this exclusions, becauseOf not need for this project -->
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-expression</artifactId>				
+				</exclusion>
+			</exclusions>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

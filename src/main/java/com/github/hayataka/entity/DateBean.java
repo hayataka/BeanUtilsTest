@@ -10,6 +10,19 @@ public class DateBean {
 
 	private List<String> ls;
 
+	
+	private List<StringBean> stringBean;
+	
+	
+
+	public List<StringBean> getStringBean() {
+		return stringBean;
+	}
+
+	public void setStringBean(List<StringBean> stringBean) {
+		this.stringBean = stringBean;
+	}
+
 	public List<String> getLs() {
 		return ls;
 	}
@@ -24,7 +37,9 @@ public class DateBean {
 
 	@Override
 	public String toString() {
-		return "DateBean [date=" + date + ", id=" + id + ", ls=" + ls + "]";
+		final int maxLen = 10;
+		return "DateBean [date=" + date + ", id=" + id + ", ls=" + (ls != null ? ls.subList(0, Math.min(ls.size(), maxLen)) : null) + ", stringBean="
+				+ (stringBean != null ? stringBean.subList(0, Math.min(stringBean.size(), maxLen)) : null) + "]";
 	}
 
 	public Date getDate() {

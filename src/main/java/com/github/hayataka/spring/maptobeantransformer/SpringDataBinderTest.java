@@ -52,37 +52,8 @@ public class SpringDataBinderTest {
 
 
 		DateBean dateBean = new DateBean();
-		DataBinder dataBinder2 = new DataBinder(dateBean);
 
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-
-//		dataBinder2.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
-
-//		dataBinder2.convertIfNecessary(value, requiredType)
-		dataBinder2.registerCustomEditor(Date.class, new PropertyEditorSupport() {
-
-			@Override
-			public void setAsText(String text) throws IllegalArgumentException {
-			     try {
-			            setValue(new SimpleDateFormat("yyyy/MM/dd").parse(text));
-			        } catch(ParseException e) {
-			            setValue(null);
-			        }
-			}
-
-
-		    public String getAsText() {
-		        return new SimpleDateFormat("yyyy/MM/dd").format((Date) getValue());
-		    }
-
-		});
-
-
-// 駄目だ。理由がわからなかったのだが、上記カスタム箇所を通らない。
-		dataBinder2.bind(values);
-		System.out.println(dateBean);
-
-
 // 出来たー
 		BeanWrapperImpl bw = new BeanWrapperImpl(dateBean);
 		bw.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
@@ -97,6 +68,8 @@ public class SpringDataBinderTest {
 		mw.add("ls[0]", "1");
 		mw.add("ls[1]", "2");
 		mw.add("ls[2]", "3");
+		mw.add("stringBean[0].date","hogehoge");
+		mw.add("stringBean[1].date","haaaaaaaaaaaaaogehoge");	
 
 bw.setAutoGrowNestedPaths(true);
 bw.setAutoGrowCollectionLimit(100);

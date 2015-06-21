@@ -1,3 +1,10 @@
+TODO これは何？
+TODO ビルドするために必要なことは何？
+TODO 何を調べ終わったのか？
+
+
+
+
 参考URL
 
 http://fits.hatenablog.com/entry/2013/10/13/120444

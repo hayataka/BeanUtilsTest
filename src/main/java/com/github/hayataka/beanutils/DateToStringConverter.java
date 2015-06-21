@@ -1,11 +1,11 @@
-package com.github.hayataka.spring.maptobeantransformer;
+package com.github.hayataka.beanutils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.beanutils.Converter;
 
-public class SampleStringConverter implements Converter  {
+public class DateToStringConverter implements Converter  {
 
 	@Override
 	public <T> T convert(Class<T> type, Object value) {
@@ -14,12 +14,13 @@ public class SampleStringConverter implements Converter  {
 			return (T) null;
 		} else if (value instanceof Date) {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-			return (T)sdf.format(value);
+			@SuppressWarnings("unchecked")
+			final T ret = (T)sdf.format(value); 
+			return ret;
 		} else {
-			return (T)value.toString();
+			@SuppressWarnings("unchecked")
+			final T ret = (T)value.toString(); 
+			return ret;
 		}
 	}
-
-
-
 }

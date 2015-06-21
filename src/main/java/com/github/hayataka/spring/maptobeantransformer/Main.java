@@ -7,6 +7,7 @@ import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.beanutils.ConvertUtilsBean;
 import org.springframework.beans.BeanInstantiationException;
 
+import com.github.hayataka.beanutils.DateToStringConverter;
 import com.github.hayataka.entity.DateBean;
 import com.github.hayataka.entity.Person;
 import com.github.hayataka.entity.StringBean;
@@ -57,7 +58,7 @@ public class Main {
 
 	//●独自BeanUtilsBeanに独自コンバーターをセットしてdstへコピー
 		bu.getConvertUtils().register(
-					new SampleStringConverter(), //独自コンバーターを
+					new DateToStringConverter(), //独自コンバーターを
 					String.class		  //String型への変換として登録
 				);
 		bu.copyProperties(dst, src);
