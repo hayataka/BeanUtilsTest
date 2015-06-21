@@ -1,6 +1,8 @@
 package com.github.hayataka.spring;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -8,10 +10,6 @@ import org.junit.Test;
 import org.springframework.beans.MutablePropertyValues;
 
 import com.github.hayataka.entity.DateBean;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BeanWrapperSampleTest {
 
