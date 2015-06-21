@@ -53,4 +53,47 @@ public class DateBean {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((ls == null) ? 0 : ls.hashCode());
+		result = prime * result + ((stringBean == null) ? 0 : stringBean.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DateBean other = (DateBean) obj;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (ls == null) {
+			if (other.ls != null)
+				return false;
+		} else if (!ls.equals(other.ls))
+			return false;
+		if (stringBean == null) {
+			if (other.stringBean != null)
+				return false;
+		} else if (!stringBean.equals(other.stringBean))
+			return false;
+		return true;
+	}
 }
